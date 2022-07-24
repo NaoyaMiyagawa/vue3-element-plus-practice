@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import TheHeader from './components/layout/TheHeader.vue'
+import TheSidebar from './components/layout/TheSidebar.vue'
 </script>
 
 <template>
   <div class="common-layout">
-    <TheHeader />
+    <TheHeader height="50px" />
 
-    <ElContainer>
-      <ElAside width="200px">Aside</ElAside>
+    <ElContainer class="ly_pageBody">
+      <TheSidebar />
+
       <ElMain>
         <RouterView />
       </ElMain>
@@ -17,5 +19,10 @@ import TheHeader from './components/layout/TheHeader.vue'
 </template>
 
 <style lang="scss" scoped>
-//
+$pageBodyHeight: calc(100vh - 50px);
+
+.ly_pageBody {
+  min-height: $pageBodyHeight;
+  height: $pageBodyHeight;
+}
 </style>
