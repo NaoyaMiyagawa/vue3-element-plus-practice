@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const selected = $ref();
+const selected = $ref()
 </script>
 
 <template>
